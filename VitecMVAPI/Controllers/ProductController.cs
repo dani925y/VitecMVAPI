@@ -22,7 +22,13 @@ namespace VitecMVAPI.Controllers
                 _context.Products.Add(new Product { 
                     Id = 1,
                     Name = "CD-ORD",
-                    Description = "Dette er CD-ORD",
+                    Description = "Læse- og skriveværktøjet CD-ORD er kendt for at forløse ordblinde børn og voksnes potentiale for at læse, skrive og lære." +
+                    "Ved hjælp af oplæsning og kontekstbaserede ordforslag afhjælper programmet langsom læsning og fejl i skrivning og stavning.Det giver både større frihed " +
+                    "og selvhjulpenhed og baner vejen for faglig succes." +
+                    "CD - ORD hjælper dig med at læse al tekst på computeren: i dokumenter, på nettet, på knapper, menuer og i spil." +
+                    "Og fordi CD - ORD installeres, virker det i alle situationer, selv når du er offline." +
+                    "Unikke indstillingsmuligheder, der kan tilpasses den ordblinde brugers personlige behov eller specifikke læse - og skriveformål, " +
+                    "gør CD - ORD til et særligt fleksibelt og personligt læse - og skriveværktøj.",
                     Image = "https://www.mv-nordic.com/wp-content/uploads/2017/11/CDORD_gradient.png",
                     Price = 100
                 });
@@ -192,7 +198,7 @@ namespace VitecMVAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Product>> GetProduct(long id)
+        public async Task<ActionResult<Product>> GetProduct(int id)
         {
             var productItems = await _context.Products.FindAsync(id);
 
